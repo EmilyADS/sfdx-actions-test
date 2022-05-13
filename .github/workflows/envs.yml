@@ -1,0 +1,37 @@
+name: analisando-variaveis
+on: [push]
+env:
+  WF_ENV: disponivel pra TODO MUNDO
+
+jobs:
+  run-github-envs:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: para quando precisar de uma env somente para este job
+    steps:
+      - name: mostrando a env principal
+        run: |
+          echo "WF_ENV: ${WF_ENV}"
+      - name: criando uma env local e mostrando a principal
+        env:
+          STEP_ENV: env dentro do step
+        run: |
+          echo "WF_ENV: ${WF_ENV}"
+          echo "JOB_ENV: ${JOB_ENV}"
+          echo "STEP_ENV: ${STEP_ENV}"
+      - name: Logando todas as 3 variáveis
+        run: |
+          echo "WF_ENV: ${WF_ENV}"
+          echo "JOB_ENV: ${JOB_ENV}"
+          echo "STEP_ENV: ${STEP_ENV}"
+  outro-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: variáveis do github + as que criei
+        run: |
+          echo "WF_ENV: ${WF_ENV}"
+          echo "JOB_ENV: ${JOB_ENV}"
+          echo "STEP_ENV: ${STEP_ENV}"
+          echo "home: ${HOME}"
+          echo "REPOSITORIO: ${GITHUB_REPOSITORY}"
+          echo "ACTOR: ${GITHUB_ACTOR}"

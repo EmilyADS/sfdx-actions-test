@@ -1,0 +1,37 @@
+name: usando-token-github
+on: pull-request
+
+jobs:
+  github-token-insert-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: criando arquivo autenticado via token
+        run: |
+          echo "pasta atual"
+          pwd
+          ls -a
+          echo "criando um novo repo no git - git init"
+          git init
+          echo "logando no nosso repositorio via token para executar no servidor os comandos do git"
+          git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+          echo "inserindo um responsável pelo commit novo do arquivo gerado aleatoriamente"
+          git config --global user.email "teste@teste.com"
+          git config --global user.name "teste"
+          echo "vendo se não tem commit pendente"
+          git fetch
+          echo "logando na branch main"
+          git checkout main
+          git branch --set-upstream-to=origin/main
+          echo "atualizando a branch atual"
+          git pull
+          echo "listando o conteúdo da branch atual"
+          ls -a
+          echo "escrevendo um arquivo txt"
+          echo $RANDOM >> random.txt
+          echo "listando os arquivos da branch atual"
+          ls -a
+          echo "commitando e dando push"
+          git add .
+          git commit -m "random file"
+          git push

@@ -1,0 +1,32 @@
+name: context functions
+# contexto serve para acessar informações de execução de um step, trabalho etc dentro do gitlab
+# usar aspas simples na comparação de contains
+on: push
+
+jobs:
+  functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: vendo execucao de funcoes usando expressoes
+        run: |
+          echo ${{ contains('emily', 'b')}}
+          echo ${{ contains('emily', 'm')}}
+          
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        id: github_context_step
+        run: eccho '${{ toJSON(github) }}'
+      - name: Dump job context
+        if: failure()
+        run: echo '${{ toJSON(job) }}'
+      - name: Dump steps context
+        run: echo '${{ toJSON(steps) }}'
+      - name: Dump runner context
+        run: echo '${{ toJSON(runner) }}'
+      - name: Dump strategy context
+        if: always()
+        run: echo '${{ toJSON(strategy) }}'
+      - name: Dump matrix context
+        run: echo '${{ toJSON(matrix) }}'
