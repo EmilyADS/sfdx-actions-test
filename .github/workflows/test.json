@@ -1,0 +1,61 @@
+{
+    "status": 0,
+    "result": {
+        "records": [
+            {
+                "attributes": {
+                    "type": "InstalledSubscriberPackage",
+                    "url": "/services/data/v57.0/tooling/sobjects/InstalledSubscriberPackage/0A3270000001DbSAI"
+                },
+                "SubscriberPackage": {
+                    "attributes": {
+                        "type": "SubscriberPackage",
+                        "url": "/services/data/v57.0/tooling/sobjects/SubscriberPackage/03309000000CtfPAAS"
+                    },
+                    "Name": "Pexlify Articles"
+                },
+                "SubscriberPackageVersion": {
+                    "attributes": {
+                        "type": "SubscriberPackageVersion",
+                        "url": "/services/data/v57.0/tooling/sobjects/SubscriberPackageVersion/04t09000000FCfoAAG"
+                    },
+                    "Id": "94t09000000FCfOAAG",
+                    "Majorversion": 1,
+                    "MinorVersion": 2,
+                    "PatchVersion": 0,
+                    "BuildNumber": 1
+                }
+            },
+            {
+                "attributes": {
+                    "type": "InstalledSubscriberPackage",
+                    "url": "/services/data/v57.0/tooling/sobjects/InstalledSubscriberPackage/94t09000000FCttttttttt"
+                },
+                "SubscriberPackage": {
+                    "attributes": {
+                        "type": "SubscriberPackage",
+                        "url": "/services/data/v57.0/tooling/sobjects/SubscriberPackage/94t09000000FCttttttttt"
+                    },
+                    "Name": "OutroPacote"
+                },
+                "SubscriberPackageVersion": {
+                    "attributes": {
+                        "type": "SubscriberPackageVersion",
+                        "url": "/services/data/v57.0/tooling/sobjects/SubscriberPackageVersion/94t09000000FCttttttttt"
+                    },
+                    "Id": "94t09000000FCttttttttt",
+                    "Majorversion": 1,
+                    "MinorVersion": 2,
+                    "PatchVersion": 0,
+                    "BuildNumber": 1
+                }
+            }
+
+        ],
+        "totalSize": 123,
+        "done": true
+    },
+    "warnings": [
+        "qualwur coisa"
+    ]
+}
