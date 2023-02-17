@@ -32,8 +32,7 @@ jobs:
 
         for i in "${your_array[@]}"
         do
-          echo "$i is ${your_array[$i]"
-          # echo "$i[SubscriberPackageVersion.id]"
+          echo "$i is ${your_array[$i]}"
           # or do whatever with individual element of the array
         done
 #         # for olhando para o json.list procurando o nome "package"" dele no "SubscriberPackageName", se achar verifica se o versionNumber do list é menor que o SubscriberPackageVersionNumber
