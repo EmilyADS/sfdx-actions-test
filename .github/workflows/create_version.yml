@@ -21,10 +21,14 @@ jobs:
         cat pacotes_instalados.json
 
         echo "[debug] teste de não instalar pacote fdp"
+        cat test.json
         cat test.json | jq '[.result.records[]]' > list_IT.json
+        echo "[debug] somente listando"
+        cat list_IT.json
+        echo "[debug] parse to array"
         readarray -t your_array < <(jq -r '.[]' <<<"$list_IT.json")
 
-        declare -p your_array
+        declare -a your_array
 
         for i in "${your_array[@]}"
         do
