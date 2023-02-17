@@ -14,19 +14,19 @@ jobs:
     - name: teste leitura de arquivo
       run: |
         pwd
-        cat mywork/sfdx-project.json | jq '[.packageDirectories[].dependencies[]]' > list.json
-        cat list.json
+        #cat mywork/sfdx-project.json | jq '[.packageDirectories[].dependencies[]]' > list.json
+        #cat list.json
         # salva o arquivo de pacotes instalados em json
-        cat installed.json | jq '[.result[]]' > pacotes_instalados.json
-        cat pacotes_instalados.json
+        #cat installed.json | jq '[.result[]]' > pacotes_instalados.json
+        #cat pacotes_instalados.json
 
         echo "[debug] teste de não instalar pacote fdp"
         cat test.json
-        cat test.json | jq '[.result.records[]]' > list_IT.json
+        cat test.json | jq '[.result]' > list_IT.json
         echo "[debug] somente listando"
         cat list_IT.json
         echo "[debug] parse to array"
-        readarray -t your_array < <(jq -r '.[]' <<< $list_IT.json )
+        readarray -t your_array < <(jq -r '.[].records[]' $list_IT.json )
 
         declare -a your_array
 
