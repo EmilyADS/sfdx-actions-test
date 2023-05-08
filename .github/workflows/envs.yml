@@ -1,7 +1,8 @@
 name: analisando-variaveis
-on: [push]
+on:
+  push
 env:
-  WF_ENV: disponivel pra TODO MUNDO
+  WF_ENV: coe_key
 
 jobs:
   run-github-envs:

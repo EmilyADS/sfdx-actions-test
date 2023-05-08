@@ -1,5 +1,6 @@
 name: first-comands shell
-on: [push]
+on:
+  workflow_call:
 jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
@@ -34,16 +35,8 @@ jobs:
         run: |
           echo username value ${{ secrets.USERNAME_STAGING }}
           sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMER_KEY }} --username=${{ secrets.USERNAME }} --jwtkeyfile server.key --instanceurl https://testeemily1-dev-ed.my.salesforce.com
-      - name: retrieve metadata - precisa rodar dentro de um projeto DX
-        run: |
-          sfdx force:project:create --projectname mywork --template standard
-          pwd
-          ls -a
-          cd mywork/force-app
-          ls -a
-          # sfdx force:source:retrieve -m Case -u ${{secrets.USERNAME}}
-          # ls -a
-          # steps:
+
+          sfdx force:package:installed:list -u ${{ secrets.USERNAME }} --json
 
 
         

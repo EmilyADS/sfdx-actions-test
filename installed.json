@@ -1,0 +1,50 @@
+{
+    "status": 0,
+    "result": [
+      {
+        "Id": "0A30b000000rKLaCAM",
+        "SubscriberPackageId": "03330000000wDAbAAM",
+        "SubscriberPackageName": "Salesforce Connected Apps",
+        "SubscriberPackageNamespace": "sf_com_apps",
+        "SubscriberPackageVersionId": "04t30000001DUvrAAG",
+        "SubscriberPackageVersionName": "Winter '16",
+        "SubscriberPackageVersionNumber": "1.7.0.1"
+      },
+      {
+        "Id": "0A30b000000rKLJCA2",
+        "SubscriberPackageId": "03336000000GVxjAAG",
+        "SubscriberPackageName": "SalesforceIQ Cloud",
+        "SubscriberPackageNamespace": "SIQCloud",
+        "SubscriberPackageVersionId": "04t36000000adDUAAY",
+        "SubscriberPackageVersionName": "SIQCloud OAuth",
+        "SubscriberPackageVersionNumber": "1.0.0.1"
+      },
+      {
+        "Id": "0A30b0000009jahCAA",
+        "SubscriberPackageId": "0333k000000YRAkAAO",
+        "SubscriberPackageName": "In-App Guidance: Boost Sales User Productivity in Lightning Experience",
+        "SubscriberPackageNamespace": "prompts102019",
+        "SubscriberPackageVersionId": "04t3k000000bHJEAA2",
+        "SubscriberPackageVersionName": "Winter '20",
+        "SubscriberPackageVersionNumber": "1.1.0.1"
+      },
+      {
+        "Id": "0A30b000000rKLGCA2",
+        "SubscriberPackageId": "03358000000Q8xqAAC",
+        "SubscriberPackageName": "Sales Insights",
+        "SubscriberPackageNamespace": "OIQ",
+        "SubscriberPackageVersionId": "04t58000000SGw3AAG",
+        "SubscriberPackageVersionName": "1.0",
+        "SubscriberPackageVersionNumber": "1.0.0.1"
+      },
+      {
+        "Id": "0A30b000000srXaCAI",
+        "SubscriberPackageId": "033E00000009RFZIA2",
+        "SubscriberPackageName": "Lightning Connect Quickstart",
+        "SubscriberPackageNamespace": null,
+        "SubscriberPackageVersionId": "04tE00000001aqGIAQ",
+        "SubscriberPackageVersionName": "Tutorial",
+        "SubscriberPackageVersionNumber": "1.1.0.1"
+      }
+    ]
+  }

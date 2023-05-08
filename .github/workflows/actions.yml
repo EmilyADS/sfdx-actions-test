@@ -1,12 +1,12 @@
 name: actions-example
-# on: [push]
-on: 
-  pull_request_review:
-    types: [edited,dismissed,submitted]
-  # push:
-    # branchs:
-    #  - main
-    #  -'!develop'
+
+on:
+  # pull_request:
+  #   types: [edited]
+  push:
+    branchs:
+     - main
+     - develop
   # pull_request:
   #   types: [closed, opened, reopened]
   #schedule:
@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: paylod via postman pegando a env
         run: |
+          DEPENDENCIES="echo python -c 'import json;'"
+          echo "DEPENDENCIES: $DEPENDENCIES"
           echo ${{ github.event.client_payload.env}}
       - name: variáveis de ambiente do github
         run: |
@@ -33,5 +35,32 @@ jobs:
       - name: Dump GitHub context
         run: echo "$GITHUB_CONTEXT"
         env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
+          GITHUB_CONTEXT: ${{ toJSON(github.event.pull_request.body) }}
+      - name: pacotes
+        env:
+          COMENTARIO: ${{ github.event.pull_request.body }}
+        run: |
+            readarray -t LINES <<< "$COMENTARIO"
+
+            for LINE in "${LINES[@]}"; do  
+                echo "LINE -> $LINE"
+
+                if [[ "$LINE" =~ ^pacotes[[:space:]]*=(.*)$ ]]; then
+                    readarray -d "," -t PACKAGES <<< ${BASH_REMATCH[1]}
+                    for PACKAGE in "${PACKAGES[@]}"; do
+                        PACKAGE_WITHOUT_SPACES=$(echo $PACKAGE | xargs)
+                        echo "package = \"$PACKAGE_WITHOUT_SPACES\""
+                    done;
+                elif [[ "$LINE" =~ ^testes[[:space:]]*=(.*)$ ]]; then
+                    CAPTURED_VALUE=${BASH_REMATCH[1]}
+                    readarray -d "," -t TESTS <<< ${BASH_REMATCH[1]}
+                    for TEST in "${TESTS[@]}"; do
+                        TEST_WITHOUT_SPACES=$(echo $TEST | xargs)
+                        echo "test = \"$TEST_WITHOUT_SPACES\""
+                    done;
+                fi
+            done;
+            
+
+
         

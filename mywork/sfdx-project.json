@@ -1,0 +1,48 @@
+{
+  "packageDirectories": [
+    {
+      "path": "myPkgAlias",
+      "default": true,
+      "package": "myPkgAlias",
+      "versionName": "1.0.0",
+      "versionNumber": "1.0.0.NEXT", "dependencies": [
+        {
+            "package": "Tutorial",
+            "versionNumber": "0.2.0.LATEST"
+        },
+        {
+            "package": "SIQCloud OAuth",
+            "versionNumber": "0.0.1.LATEST"
+        }
+    ]
+  },
+  {
+      "path": "myPkgAlias2",
+      "default": true,
+      "package": "myPkgAlias2",
+      "versionName": "1.0.0",
+      "versionNumber": "1.0.0.NEXT",
+      "dependencies": [
+        {
+            "package": "Tutorial",
+            "versionNumber": "0.2.1.LATEST"
+        },
+        {
+            "package": "SIQCloud OAuth",
+            "versionNumber": "0.1.1.LATEST"
+        }
+    ]
+  }
+  ],
+
+  "name": "teste",
+  "namespace": "",
+  "sfdcLoginUrl": "https://testeemily1-dev-ed.my.salesforce.com",
+  "sourceApiVersion": "52.0",
+  "packageAliases": {
+    "myPkgAlias": "0Ho000000000000001",
+    "Tutorial": "0Ho000000000000001",
+    "SIQCloud": "0Ho000000000000001"
+  }
+  
+}
